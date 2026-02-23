@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root {
+    --primary: #4b3935;
+    --secondary: #cc953c;
+    --cream: #F0E7D5;
+    --soft-bg: #f8f5ee;
+    --gradient: linear-gradient(135deg, #4b3935, #a67c52);
+}
+
+/* =========================
+   GLOBAL STYLE
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--soft-bg);
+    color: var(--primary);
+    line-height: 1.7;
+}
+
+/* Smooth transition global */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    text-align: center;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #5b4a45;
+}
+
+/* =========================
+   HERO / SUB HEADER
+========================= */
+.sub-header {
+    height: 350px;
+    background-image: url(https://i.pinimg.com/1200x/c6/0b/34/c60b342e18bf46564493414c7ae3e330.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.sub-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+}
+
+.sub-header h1 {
+    position: relative;
+    z-index: 2;
+    -webkit-text-fill-color: white;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 60px 10%;
+}
+
+/* Product Card - Glass Modern */
+.produk {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.produk:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.produk img {
+    width: 170px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.produk h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.harga {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 18px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-kembali,
+form button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-kembali:hover,
+form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   ARTICLE SECTION
+========================= */
+.artikel {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.artikel .sampul {
+    width: 200px;
+    float: right;
+    margin: 0 0 20px 20px;
+    border-radius: 15px;
+}
+
+/* =========================
+   FORM STYLE
+========================= */
+.formulir {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(204,149,60,0.2);
+}
+/* =========================
+   NAVBAR MODERN ELEGANT
+========================= */
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+    padding: 14px 35px;
+    border-radius: 50px;
+    display: flex;
+    gap: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+/* Hilangkan default link style */
+nav a {
+    text-decoration: none;
+    color: #4b3935;
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+    transition: 0.3s ease;
+}
+
+/* Animasi underline modern */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #cc953c;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #cc953c;
+}
+
+/* ===== ROOT COLORS ===== */
+:root {
+    --primary: #4b3935;
+    --secondary: #cc953c;
+    --cream: #F0E7D5;
+}
+
+/* ===== GLOBAL ===== */
+* { box-sizing: border-box; margin:0; padding:0; transition: all 0.3s ease-in-out;}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background: var(--cream);
+    color: var(--primary);
+}
+a { text-decoration: none; }
+
+/* ===== NAVBAR ===== */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding: 14px 35px;
+    border-radius: 50px;
+    display: flex;
+    gap: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+nav a {
+    color: var(--primary);
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--secondary);
+    transition: 0.3s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a:hover { color: var(--secondary); }
+
+body { padding-top: 100px; } /* supaya navbar tidak menutupi konten */
+
+/* ===== HERO ===== */
+.hero-intro {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://i.pinimg.com/1200x/c5/23/e6/c523e62aae341afcd67e589ad8c7843d.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-content { color: white; }
+.hero-content h1 { font-size: 48px; font-family: 'Playfair Display', serif; }
+.hero-content .tagline { font-size: 18px; margin-top: 10px; font-style: italic; }
+
+/* ===== SECTION ===== */
+section { padding: 80px 10%; text-align: center; }
+.intro p, .closing p { max-width: 700px; margin: 20px auto; font-size: 17px; }
+.collection ul { list-style: none; padding:0; max-width: 800px; margin:40px auto; text-align:left; }
+.collection li { margin: 15px 0; font-size: 17px; }
+
+/* ===== CLOSING SECTION ===== */
+.closing {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 20px;
+    margin: 60px 10%;
+    padding: 60px 20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--primary);
+    color: var(--cream);
+    margin-top: 60px;
+}
+
+
