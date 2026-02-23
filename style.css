@@ -329,7 +329,20 @@ footer {
     padding: 30px;
     background: var(--primary);
     color: var(--cream);
+
+    blockquote {
+    font-style: italic;                 /* Italic untuk kesan klasik */
+    padding-left: 20px;                 /* Jarak dari border */
+    margin: 20px 0;                     /* Jarak dari paragraf lain */
+    border-left: 4px solid #4b3935;     /* Border kiri warna coklat tua */
+    color: #4b3935;                     /* Warna teks coklat sesuai tema */
+    background-color: #F0E7D5;          /* Cream background ringan */
+    border-radius: 5px;                 /* Sedikit lengkung di kotak */
+    padding: 15px 20px;                 /* Ruang dalam block */
+    box-shadow: 0 2px 5px rgba(75, 57, 53, 0.1); /* Sedikit shadow untuk depth */
+}
     margin-top: 60px;
 }
+
 
 
