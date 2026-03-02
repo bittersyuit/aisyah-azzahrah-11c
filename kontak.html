@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Aisyah Azzahrah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ROOT COLORS ===== */
+        :root {
+            --primary: #4b3935;
+            --secondary: #cc953c;
+            --cream: #F0E7D5;
+            --soft-bg: #f8f5ee;
+            --gradient: linear-gradient(135deg, #4b3935, #a67c52);
+        }
+
+        /* ===== GLOBAL ===== */
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s ease-in-out; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            background: var(--cream);
+            color: var(--primary);
+        }
+        a { text-decoration: none; }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(12px);
+            padding: 14px 35px;
+            border-radius: 50px;
+            display: flex;
+            gap: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+        nav a {
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            padding: 6px 0;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--secondary);
+            transition: 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--secondary); }
+        nav a.active { color: var(--secondary); }
+        nav a.active::after { width: 100%; }
+
+        body { padding-top: 100px; }
+
+        /* ===== HERO / SUB HEADER ===== */
+        .sub-header {
+            height: 350px;
+            background-image: url(https://i.pinimg.com/1200x/c6/0b/34/c60b342e18bf46564493414c7ae3e330.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            font-size: 40px;
+            font-weight: 600;
+        }
+        .sub-header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(3px);
+        }
+        .sub-header h1 {
+            position: relative;
+            z-index: 2;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            -webkit-text-fill-color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* ===== HEADINGS ===== */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            text-align: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #5b4a45;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 60px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .contact-intro p {
+            font-size: 17px;
+        }
+
+        /* ===== CONTACT CARDS ===== */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .contact-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .contact-card p {
+            color: #5b4a45;
+            font-size: 15px;
+        }
+        .contact-card a {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== FORM STYLE ===== */
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 0;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: var(--primary);
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(204,149,60,0.15);
+            outline: none;
+        }
+
+        form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* ===== BUTTON ===== */
+        .btn-submit {
+            display: inline-block;
+            width: 100%;
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* ===== SOCIAL MEDIA ===== */
+        .social-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 50px 10%;
+            background: rgba(255,255,255,0.4);
+            border-radius: 20px;
+        }
+        .social-section h2 {
+            margin-bottom: 30px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: white;
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .social-links a:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .social-links .icon {
+            font-size: 20px;
+        }
+
+        /* ===== SUCCESS MESSAGE ===== */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--primary);
+            color: var(--cream);
+            margin-top: 80px;
+        }
+        footer p {
+            color: var(--cream);
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 20px;
+                gap: 20px;
+                width: 90%;
+            }
+            .sub-header {
+                height: 280px;
+            }
+            .sub-header h1 {
+                font-size: 32px;
+            }
+            .contact-section {
+                padding: 40px 5%;
+            }
+            .form-container {
+                padding: 30px 20px;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .social-links a {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="bedah-buku.html">Bedah Buku</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="event.html">Event</a>
+</nav>
+    <!-- HERO SECTION -->
+    <div class="sub-header">
+        <h1>Hubungi Kami</h1>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="contact-intro">
+            <h2>Kami Siap Membantu</h2>
+            <p>Apakah Anda memiliki pertanyaan, saran, atau ingin berkolaborasi? Jangan ragu untuk menghubungi kami melalui formulir di bawah ini atau melalui kontak yang tersedia. Kami akan merespons secepat mungkin!</p>
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h3>Email</h3>
+                <p><a href="mailto:aisyxahazz@email.com">aisyxahazz@email.com</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="icon">📱</div>
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/6281234567890">+62 812 3456 7890</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="icon">📍</div>
+                <h3>Lokasi</h3>
+                <p>Indonesia</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-container">
+            <h2>Kirim Pesan</h2>
+            
+            <div class="success-message" id="successMessage">
+                ✓ Pesan Anda telah terkirim! Terima kasih telah menghubungi kami.
+            </div>
+
+            <form id="contactForm" action="https://formspree.io/f/meelwwdr" method="POST">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap *</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap Anda">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subjek</label>
+                    <input type="text" id="subject" name="subject" placeholder="Masukkan subjek pesan">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Pesan *</label>
+                    <textarea id="message" name="message" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-section">
+            <h2>Ikuti Kami</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/bittersyuit" target="_blank">
+                    <span class="icon">📷</span>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitter.com/username_kamu" target="_blank">
+                    <span class="icon">📘</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://x.com/bittersyuit" target="_blank">
+                    <span class="icon">🐦</span>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://youtube.com/@aisyahazz" target="_blank">
+                    <span class="icon">📺</span>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Aisyah Azzahrah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
